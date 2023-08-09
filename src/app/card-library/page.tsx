@@ -1,3 +1,4 @@
+import { CardData } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,9 +18,7 @@ const getData = async () => {
 };
 
 const CardLibrary = async () => {
-  const cards = await getData();
-
-  //   console.log(cards.map((card) => card.id));
+  const cards: CardData[] = await getData();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
