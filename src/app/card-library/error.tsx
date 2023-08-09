@@ -1,12 +1,14 @@
+"use client";
+
 import Link from "next/link";
 
-const Home = () => {
+const Error = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Home
-      <Link href="/card-library">Enter</Link>
+      This is an Error Boundary
+      <Link href="/">Home</Link>
     </main>
   );
 };
 
-export default Home;
+export default Error;
