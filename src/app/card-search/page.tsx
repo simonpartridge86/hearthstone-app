@@ -8,7 +8,7 @@ type CardBrowserProps = {
   searchParams: { page: string };
 };
 
-const CardSearch: React.FC<CardBrowserProps> = async ({ searchParams }) => {
+const CardSearchPage: React.FC<CardBrowserProps> = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page);
   const { cards, pageCount }: { cards: CardData[]; pageCount: number } =
     await getFilteredCards(pageNumber);
@@ -33,4 +33,4 @@ const CardSearch: React.FC<CardBrowserProps> = async ({ searchParams }) => {
   );
 };
 
-export default CardSearch;
+export default CardSearchPage;

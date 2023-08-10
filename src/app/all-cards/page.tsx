@@ -9,15 +9,16 @@ type CardBrowserProps = {
   searchParams: { limit: string };
 };
 
-const CardBrowser: React.FC<CardBrowserProps> = async ({ searchParams }) => {
+const AllCardsPage: React.FC<CardBrowserProps> = async ({ searchParams }) => {
   const limit = Number(searchParams.limit);
   const { cards }: { cards: CardData[] } = await getCards(limit);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Card Library
+      <h1>View All Cards</h1>
       <Link href="/">Home</Link>
       <Link href="/card-search?page=1">Card Search</Link>
+      <Link href="/favourites">Favourites</Link>
       <CardContainer>
         {cards?.map((card) => {
           return <CardImage card={card} key={card.id} />;
@@ -28,4 +29,4 @@ const CardBrowser: React.FC<CardBrowserProps> = async ({ searchParams }) => {
   );
 };
 
-export default CardBrowser;
+export default AllCardsPage;

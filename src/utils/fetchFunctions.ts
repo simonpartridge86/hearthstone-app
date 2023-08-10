@@ -41,7 +41,7 @@ export const getCards = async (limit: number) => {
   }
 };
 
-//fetches 20 cards according to filters (4876 total "cardCount")
+//fetches cards according to filters (4876 total "cardCount")
 
 export const getFilteredCards = async (page: number) => {
   const pageSize = 20;
