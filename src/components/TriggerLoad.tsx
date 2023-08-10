@@ -22,7 +22,9 @@ export const TriggerLoad: React.FC<TriggerLoadProps> = ({ limit }) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
-            router.replace(`/cards?limit=${limit + 100}`, { scroll: false });
+            router.replace(`/all-cards?limit=${limit + 100}`, {
+              scroll: false,
+            });
           }, 1000);
         }
       });

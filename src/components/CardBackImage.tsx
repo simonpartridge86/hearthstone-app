@@ -8,7 +8,7 @@ type CardBackImageProps = {
 
 export const CardBackImage: React.FC<CardBackImageProps> = ({ cardBack }) => {
   return (
-    <Link href="/cards?limit=100">
+    <Link href="/all-cards?limit=100">
       <Image
         key={cardBack.id}
         src={cardBack.image}

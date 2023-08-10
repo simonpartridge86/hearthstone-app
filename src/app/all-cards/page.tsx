@@ -6,7 +6,7 @@ import { CardData } from "@/utils/types";
 import Link from "next/link";
 
 type CardBrowserProps = {
-  searchParams: { limit: number };
+  searchParams: { limit: string };
 };
 
 const CardBrowser: React.FC<CardBrowserProps> = async ({ searchParams }) => {
@@ -17,6 +17,7 @@ const CardBrowser: React.FC<CardBrowserProps> = async ({ searchParams }) => {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       Card Library
       <Link href="/">Home</Link>
+      <Link href="/card-search?page=1">Card Search</Link>
       <CardContainer>
         {cards?.map((card) => {
           return <CardImage card={card} key={card.id} />;
