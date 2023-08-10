@@ -27,3 +27,12 @@ export type CardData = {
   minionTypeId?: number;
   copyOfCardId?: number;
 };
+
+export type CardBack = {
+  id: number;
+  sortCategory: number;
+  text: string;
+  name: string;
+  image: string;
+  slug: string;
+};
