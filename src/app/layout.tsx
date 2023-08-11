@@ -1,6 +1,14 @@
-import PrelineInitiator from "@/Providers/PrelineProvider";
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
+import Providers from "./Providers";
 import "./globals.css";
+
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: "Hearthstone Card App",
@@ -13,10 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <PrelineInitiator />
-        {children}
+    <html lang="en" className={`${roboto.variable}`}>
+      <body className="bg-white dark:bg-dark1 text-dark1 dark:text-white">
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
