@@ -1,3 +1,4 @@
+import Navigation from "@/components/Navigation";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "./Providers";
@@ -22,8 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${roboto.variable}`}>
-      <body className="bg-white dark:bg-dark1 text-dark1 dark:text-white">
-        <Providers>{children}</Providers>
+      <body className="bg-white text-dark1 dark:bg-dark1 dark:text-white">
+        <Providers>
+          <Navigation />
+          {children}
+        </Providers>
       </body>
     </html>
   );
