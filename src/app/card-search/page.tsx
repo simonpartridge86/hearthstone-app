@@ -24,8 +24,6 @@ const CardSearchPage: React.FC<CardBrowserProps> = async ({ searchParams }) => {
   const { cards, pageCount }: { cards: CardData[]; pageCount: number } =
     await getFilteredCards(queryString, pageNumber);
 
-  console.log("pageCount", pageCount);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       Card Library

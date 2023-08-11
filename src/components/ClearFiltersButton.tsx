@@ -2,12 +2,18 @@
 
 import { useRouter } from "next/navigation";
 
-export const ClearFiltersButton = () => {
+type ClearFiltersButtonProps = {
+  resetForm: () => void;
+};
+
+export const ClearFiltersButton: React.FC<ClearFiltersButtonProps> = ({
+  resetForm,
+}) => {
   const router = useRouter();
 
   const handleClick = () => {
+    resetForm();
     router.replace(`/card-search?page=1`);
-    //also update filters state in zustand
   };
 
   return <button onClick={handleClick}>Clear Filters</button>;

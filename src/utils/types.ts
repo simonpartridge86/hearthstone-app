@@ -128,16 +128,20 @@ export type SearchOptions = {
 };
 
 export type SearchParams = {
-  set?: string;
-  class?: string;
-  manaCost?: string;
-  attack?: string;
-  health?: string;
-  collectible?: string;
-  rarity?: string;
-  type?: string;
-  minionType?: string;
-  keyword?: string;
-  textFilter?: string;
-  page: string;
+  [key: string]: string;
 };
+
+export interface FormInput {
+  textFilter: string;
+  class: string;
+  manaCost: string;
+  attack: string;
+  health: string;
+  collectible: string;
+  rarity: string;
+  type: string;
+  minionType: string;
+  keyword: string;
+  set: string;
+  [key: string]: string;
+}
