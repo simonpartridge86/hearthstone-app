@@ -20,9 +20,13 @@ const AllCardsPage: React.FC<CardBrowserProps> = async ({ searchParams }) => {
       <Link href="/card-search?page=1">Card Search</Link>
       <Link href="/favourites">Favourites</Link>
       <CardContainer>
-        {cards?.map((card) => {
-          return <CardImage card={card} key={card.id} />;
-        })}
+        {cards.length === 0 ? (
+          <h1>No cards found</h1>
+        ) : (
+          cards?.map((card) => {
+            return <CardImage card={card} key={card.id} />;
+          })
+        )}
         <TriggerLoad limit={limit} />
       </CardContainer>
     </main>

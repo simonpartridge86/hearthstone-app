@@ -43,11 +43,11 @@ export const getCards = async (limit: number) => {
 
 //fetches cards according to filters (4876 total "cardCount")
 
-export const getFilteredCards = async (page: number) => {
+export const getFilteredCards = async (queryString: string, page: number) => {
   const pageSize = 20;
   try {
     const res = await fetch(
-      `${BASE_URL}cards?locale=en_US&page=${page}&pageSize=${pageSize}&access_token=${ACCESS_TOKEN}`
+      `${BASE_URL}cards?locale=en_US&${queryString}page=${page}&pageSize=${pageSize}&access_token=${ACCESS_TOKEN}`
     );
 
     if (!res.ok) {
@@ -67,6 +67,25 @@ export const getCard = async (id: string) => {
   try {
     const res = await fetch(
       `${BASE_URL}cards/${id}?locale=en_US&access_token=${ACCESS_TOKEN}`
+    );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+
+    const data = await res.json();
+    return data;
+  } catch (error: any) {
+    throw new Error(`Failed to fetch data: ${error.message}`);
+  }
+};
+
+//fetches card metadata to provide options in search filters
+
+export const getCardMetaData = async () => {
+  try {
+    const res = await fetch(
+      `${BASE_URL}metadata?locale=en_US&access_token=${ACCESS_TOKEN}`
     );
 
     if (!res.ok) {

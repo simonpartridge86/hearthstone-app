@@ -36,3 +36,108 @@ export type CardBack = {
   image: string;
   slug: string;
 };
+
+export type MetaData = {
+  sets: Set[];
+  setGroups: SetGroup[];
+  gameModes: CardBackCategory[];
+  arenaIds: number[];
+  types: CardBackCategory[];
+  rarities: Rarity[];
+  classes: Class[];
+  minionTypes: CardBackCategory[];
+  spellSchools: CardBackCategory[];
+  mercenaryRoles: CardBackCategory[];
+  mercenaryFactions: CardBackCategory[];
+  keywords: Keyword[];
+  filterableFields: string[];
+  numericFields: string[];
+  cardBackCategories: CardBackCategory[];
+};
+
+export type CardBackCategory = {
+  slug: string;
+  id: number;
+  name: string;
+  gameModes?: number[];
+};
+
+export type Class = {
+  slug: string;
+  id: number;
+  name: string;
+  cardId?: number;
+  heroPowerCardId?: number;
+  alternateHeroCardIds?: number[];
+};
+
+export type Keyword = {
+  id: number;
+  slug: string;
+  name: string;
+  refText: string;
+  text: string;
+  gameModes: number[];
+};
+
+export type Rarity = {
+  slug: string;
+  id: number;
+  craftingCost: Array<number | null>;
+  dustValue: Array<number | null>;
+  name: string;
+};
+
+export type SetGroup = {
+  slug: string;
+  year?: number;
+  svg?: null | string;
+  cardSets: string[];
+  name: string;
+  standard?: boolean;
+  icon?: string;
+  yearRange?: string;
+};
+
+export type Set = {
+  id: number;
+  name: string;
+  slug: string;
+  type: SetType;
+  collectibleCount: number;
+  collectibleRevealedCount: number;
+  nonCollectibleCount: number;
+  nonCollectibleRevealedCount: number;
+  aliasSetIds?: number[];
+};
+
+export enum SetType {
+  Adventure = "adventure",
+  Base = "base",
+  Empty = "",
+  Expansion = "expansion",
+}
+
+export type SearchOptions = {
+  sets: string[];
+  classes: string[];
+  rarities: string[];
+  cardTypes: string[];
+  minionTypes: string[];
+  keywords: string[];
+};
+
+export type SearchParams = {
+  set?: string;
+  class?: string;
+  manaCost?: string;
+  attack?: string;
+  health?: string;
+  collectible?: string;
+  rarity?: string;
+  type?: string;
+  minionType?: string;
+  keyword?: string;
+  textFilter?: string;
+  page: string;
+};
