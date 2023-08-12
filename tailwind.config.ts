@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "node_modules/preline/dist/*.js"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     screens: {
       sm: "480px",
@@ -23,7 +23,7 @@ const config: Config = {
       sans: ["var(--font-roboto)"],
     },
   },
-  plugins: [require("preline/plugin"), require("daisyui")],
+  plugins: [require("daisyui")],
   darkMode: "class",
 };
 export default config;

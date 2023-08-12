@@ -11,7 +11,6 @@ const Providers: React.FC<ProviderProps> = ({ children }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    require("preline");
     setMounted(true);
   }, []);
 
