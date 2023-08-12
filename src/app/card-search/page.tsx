@@ -1,4 +1,3 @@
-import { CardContainer } from "@/components/CardContainer";
 import { CardImage } from "@/components/CardImage";
 import { PaginationButton } from "@/components/PaginationButton";
 import { SearchContainer } from "@/components/SearchContainer";
@@ -34,7 +33,7 @@ const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
       <Link href="/">Home</Link>
       <Link href="/all-cards?limit=100  ">All Cards</Link>
       <SearchContainer />
-      <CardContainer>
+      <div className="relative grid grid-cols-6 gap-x-6 gap-y-6 bg-dark2 p-6 pt-7 rounded-lg">
         {cards.length === 0 ? (
           <h1>No cards found</h1>
         ) : (
@@ -42,7 +41,7 @@ const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
             return <CardImage card={card} key={card.id} />;
           })
         )}
-      </CardContainer>
+      </div>
       {pageNumber > 1 && (
         <PaginationButton
           navTo={`/card-search?${queryString}page=${pageNumber - 1}`}

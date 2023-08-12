@@ -23,7 +23,7 @@ const config: Config = {
       sans: ["var(--font-roboto)"],
     },
   },
-  plugins: [require("preline/plugin")],
+  plugins: [require("preline/plugin"), require("daisyui")],
   darkMode: "class",
 };
 export default config;

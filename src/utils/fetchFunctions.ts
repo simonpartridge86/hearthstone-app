@@ -4,11 +4,11 @@ export const BASE_URL = process.env.API_URL;
 //fetches a random selection of 10 card back designs (233 total "cardCount")
 
 export const getCardBacks = async () => {
-  const randomPageNumber = Math.ceil(Math.random() * 23);
+  const randomPageNumber = Math.ceil(Math.random() * 38);
 
   try {
     const res = await fetch(
-      `${BASE_URL}cardbacks?locale=en_US&page=${randomPageNumber}&pageSize=10&access_token=${ACCESS_TOKEN}`
+      `${BASE_URL}cardbacks?locale=en_US&page=${randomPageNumber}&pageSize=6&access_token=${ACCESS_TOKEN}`
     );
 
     if (!res.ok) {

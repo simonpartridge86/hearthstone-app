@@ -1,6 +1,5 @@
 "use client";
 
-import { CardContainer } from "@/components/CardContainer";
 import { FavouriteButton } from "@/components/FavouriteButton";
 import { SearchParams } from "@/utils/types";
 import useStore from "@/utils/zustandStore";
@@ -22,7 +21,7 @@ const FavouritesPage: React.FC<FavouritesPageProps> = ({ searchParams }) => {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Link href="/">Home</Link>
       <Link href="/all-cards?limit=100">All Cards</Link>
-      <CardContainer>
+      <div className="relative grid grid-cols-6 gap-x-6 gap-y-6 bg-dark2 p-6 pt-7 rounded-lg">
         {!favourites.length ? (
           <h2>No favourites yet</h2>
         ) : (
@@ -42,7 +41,7 @@ const FavouritesPage: React.FC<FavouritesPageProps> = ({ searchParams }) => {
             );
           })
         )}
-      </CardContainer>
+      </div>
     </main>
   );
 };

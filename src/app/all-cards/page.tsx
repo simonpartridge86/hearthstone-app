@@ -1,4 +1,3 @@
-import { CardContainer } from "@/components/CardContainer";
 import { CardImage } from "@/components/CardImage";
 import { TriggerLoad } from "@/components/TriggerLoad";
 import { getCards } from "@/utils/fetchFunctions";
@@ -18,8 +17,9 @@ const AllCardsPage: React.FC<CardBrowserProps> = async ({ searchParams }) => {
   const { cards }: { cards: CardData[] } = await getCards(limit);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <CardContainer>
+    <main className="pt-24 flex min-h-screen flex-col p-12 pt-6 items-center gap-y-5">
+      <h2>Browse all cards by scrolling</h2>
+      <div className="relative grid grid-cols-6 gap-x-6 gap-y-6 bg-dark2 p-6 pt-7 rounded-lg">
         {cards.length === 0 ? (
           <h1>No cards found</h1>
         ) : (
@@ -27,8 +27,8 @@ const AllCardsPage: React.FC<CardBrowserProps> = async ({ searchParams }) => {
             return <CardImage card={card} key={card.id} />;
           })
         )}
-        <TriggerLoad limit={limit} />
-      </CardContainer>
+      </div>
+      <TriggerLoad limit={limit} />
     </main>
   );
 };

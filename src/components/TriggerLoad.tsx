@@ -40,5 +40,12 @@ export const TriggerLoad: React.FC<TriggerLoadProps> = ({ limit }) => {
     };
   }, [router, limit]);
 
-  return <div ref={triggerRef}>Trigger Load</div>;
+  return (
+    <div
+      ref={triggerRef}
+      className="flex justify-center items-center w-full gap-x-4"
+    >
+      <span className="loading loading-spinner text-green"></span>
+    </div>
+  );
 };

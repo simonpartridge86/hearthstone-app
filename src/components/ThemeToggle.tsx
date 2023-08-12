@@ -18,7 +18,7 @@ export const ThemeToggle = () => {
 
   const MoonButton = (
     <svg
-      className="w-6 h-6 text-green"
+      className="w-5 h-5 text-green"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -31,7 +31,7 @@ export const ThemeToggle = () => {
 
   const SunButton = (
     <svg
-      className="w-6 h-6 text-green"
+      className="w-5 h-5 text-green"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
