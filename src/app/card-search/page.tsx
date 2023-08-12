@@ -6,20 +6,24 @@ import { getFilteredCards } from "@/utils/fetchFunctions";
 import { paramsToQueryString } from "@/utils/helpers";
 import { CardData, SearchParams } from "@/utils/types";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-type CardBrowserProps = {
+type CardSearchProps = {
   searchParams: SearchParams;
 };
 
-const CardSearchPage: React.FC<CardBrowserProps> = async ({ searchParams }) => {
+const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
+  if (Object.keys(searchParams).length === 0) {
+    redirect("/card-search?page=1");
+  }
+
   const { page, ...otherParams } = searchParams;
+  const pageNumber = Number(page);
 
   const queryString =
     Object.keys(otherParams).length !== 0
       ? paramsToQueryString(otherParams)
       : "";
-
-  const pageNumber = Number(page);
 
   const { cards, pageCount }: { cards: CardData[]; pageCount: number } =
     await getFilteredCards(queryString, pageNumber);

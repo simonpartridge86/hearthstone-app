@@ -2,11 +2,20 @@
 
 import { CardContainer } from "@/components/CardContainer";
 import { FavouriteButton } from "@/components/FavouriteButton";
+import { SearchParams } from "@/utils/types";
 import useStore from "@/utils/zustandStore";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-const FavouritesPage = () => {
+type FavouritesPageProps = {
+  searchParams: SearchParams;
+};
+
+const FavouritesPage: React.FC<FavouritesPageProps> = ({ searchParams }) => {
+  if (Object.keys(searchParams).length !== 0) {
+    redirect("/favourites");
+  }
   const { favourites } = useStore();
 
   return (

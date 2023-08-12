@@ -11,18 +11,18 @@ const Navigation = () => {
       >
         <div className="flex items-center">
           <Image src="/logo.png" alt="logo" width={75} height={75} />
-          <Link className="text-2xl font-bold hover:text-blue" href="/">
+          <Link href="/" className="text-2xl font-bold hover:text-blue">
             Hearthstone Card App
           </Link>
         </div>
         <div className="flex items-center gap-5 mt-5 md:justify-end md:mt-0 md:pl-5">
-          <Link className="font-medium hover:text-blue" href="/all-cards">
+          <Link href="/all-cards" className="font-medium hover:text-blue">
             All Cards
           </Link>
-          <Link className="font-medium hover:text-blue" href="/card-search">
+          <Link href="/card-search" className="font-medium hover:text-blue">
             Card Search
           </Link>
-          <Link className="font-medium hover:text-blue" href="/favourites">
+          <Link href="/favourites" className="font-medium hover:text-blue">
             Favourites
           </Link>
           <ThemeToggle />
