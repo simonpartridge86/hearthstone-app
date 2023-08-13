@@ -9,7 +9,7 @@ type PageProps = {
 const CardPage: React.FC<PageProps> = async ({ params }) => {
   const card = await getCard(params.id);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-36">
       <BackButton />
       <Image src={card.image} alt={card.name} width={300} height={500}></Image>
       <h1 className="text-4xl font-bold">Name: {card.name}</h1>
