@@ -2,7 +2,7 @@
 
 import { CardData } from "@/utils/types";
 import useStore from "@/utils/zustandStore";
-import { HeartIcon } from "./icons";
+import { HeartIcon } from "../icons";
 
 type FavouriteButtonProps = {
   card: CardData;

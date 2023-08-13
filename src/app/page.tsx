@@ -1,4 +1,4 @@
-import { CardBackImage } from "@/components/CardBackImage";
+import { CardBackImage } from "@/components/card-images/CardBackImage";
 import { CardBack } from "@/utils/types";
 import { getCardBacks } from "../utils/fetchFunctions";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { CardImage } from "@/components/CardImage";
+import { CardImage } from "@/components/card-images/CardImage";
 import { SearchParams } from "@/utils/types";
 import useStore from "@/utils/zustandStore";
 import { redirect } from "next/navigation";

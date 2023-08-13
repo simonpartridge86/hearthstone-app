@@ -5,7 +5,7 @@ import { paramsToQueryString } from "@/utils/helpers";
 import { FormInput, SearchOptions } from "@/utils/types";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import BasicButton from "./BasicButton";
+import BasicButton from "./buttons/BasicButton";
 
 type SearchFormProps = {
   searchOptions: SearchOptions;

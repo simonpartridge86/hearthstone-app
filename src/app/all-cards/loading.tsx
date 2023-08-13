@@ -1,4 +1,4 @@
-import { FallbackCardImage } from "@/components/FallbackCardImage";
+import { FallbackCardImage } from "@/components/card-images/FallbackCardImage";
 
 const Loading = () => {
   return (

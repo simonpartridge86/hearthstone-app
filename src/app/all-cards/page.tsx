@@ -1,4 +1,4 @@
-import { CardImage } from "@/components/CardImage";
+import { CardImage } from "@/components/card-images/CardImage";
 import { TriggerLoad } from "@/components/TriggerLoad";
 import { getCards } from "@/utils/fetchFunctions";
 import { CardData } from "@/utils/types";

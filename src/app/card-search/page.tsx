@@ -1,6 +1,6 @@
-import { CardImage } from "@/components/CardImage";
-import { PaginationButton } from "@/components/PaginationButton";
 import { SearchContainer } from "@/components/SearchContainer";
+import { PaginationButton } from "@/components/buttons/PaginationButton";
+import { CardImage } from "@/components/card-images/CardImage";
 import { getFilteredCards } from "@/utils/fetchFunctions";
 import { paramsToQueryString } from "@/utils/helpers";
 import { CardData, SearchParams } from "@/utils/types";

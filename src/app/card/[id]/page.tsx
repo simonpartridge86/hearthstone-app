@@ -1,4 +1,4 @@
-import { BackButton } from "@/components/BackButton";
+import { BackButton } from "@/components/buttons/BackButton";
 import { getCard } from "@/utils/fetchFunctions";
 import Image from "next/image";
 
