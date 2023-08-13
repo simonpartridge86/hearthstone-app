@@ -24,18 +24,32 @@ export const getCardBacks = async () => {
 
 //fetches all cards to a specified size limit (4876 total "cardCount")
 
-export const getCards = async (limit: number) => {
+export const getCards = async (page: number) => {
+  const pageSize = 120;
   try {
-    const res = await fetch(
-      `${BASE_URL}cards?locale=en_US&pageSize=${limit}&access_token=${ACCESS_TOKEN}`,
-    );
+    const promises = [];
+    const cards = [];
+    let pageCount = 0;
 
-    if (!res.ok) {
-      throw new Error(`HTTP error! Status: ${res.status}`);
+    for (let i = 1; i <= page; i++) {
+      promises.push(
+        fetch(
+          `${BASE_URL}cards?locale=en_US&page=${i}&pageSize=${pageSize}&access_token=${ACCESS_TOKEN}`,
+        ),
+      );
     }
 
-    const data = await res.json();
-    return data;
+    const responses = await Promise.all(promises);
+
+    for (const res of responses) {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      const data = await res.json();
+      cards.push(data.cards);
+      pageCount = data.pageCount;
+    }
+    return { cards: cards.flat(), pageCount };
   } catch (error: any) {
     throw new Error(`Failed to fetch data: ${error.message}`);
   }

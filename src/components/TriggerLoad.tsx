@@ -3,10 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 type TriggerLoadProps = {
-  limit: number;
+  page: number;
 };
 
-export const TriggerLoad: React.FC<TriggerLoadProps> = ({ limit }) => {
+export const TriggerLoad: React.FC<TriggerLoadProps> = ({ page }) => {
   const router = useRouter();
 
   const triggerRef = useRef(null);
@@ -21,11 +21,9 @@ export const TriggerLoad: React.FC<TriggerLoadProps> = ({ limit }) => {
     const callback: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            router.replace(`/all-cards?limit=${limit + 50}`, {
-              scroll: false,
-            });
-          }, 1000);
+          router.replace(`/all-cards?page=${page + 1}`, {
+            scroll: false,
+          });
         }
       });
     };
@@ -38,7 +36,7 @@ export const TriggerLoad: React.FC<TriggerLoadProps> = ({ limit }) => {
     return () => {
       observer.disconnect();
     };
-  }, [router, limit]);
+  }, [router, page]);
 
   return (
     <div

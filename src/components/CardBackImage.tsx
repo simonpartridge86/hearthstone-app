@@ -15,7 +15,7 @@ export const CardBackImage: React.FC<CardBackImageProps> = ({ cardBack }) => {
 
   const handleClick = () => {
     setCardBack(cardBack.image);
-    router.push(`/all-cards?limit=100`);
+    router.push(`/all-cards`);
   };
 
   return (
