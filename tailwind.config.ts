@@ -4,10 +4,12 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     screens: {
-      sm: "480px",
+      xs: "480px",
+      sm: "640px",
       md: "768px",
       lg: "976px",
-      xl: "1440px",
+      xl: "1280px",
+      xxl: "1440px",
     },
     colors: {
       white: "#ffffff",

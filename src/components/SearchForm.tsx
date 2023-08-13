@@ -5,8 +5,7 @@ import { paramsToQueryString } from "@/utils/helpers";
 import { FormInput, SearchOptions } from "@/utils/types";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { ClearFiltersButton } from "./ClearFiltersButton";
-import { SearchButton } from "./SearchButton";
+import BasicButton from "./BasicButton";
 
 type SearchFormProps = {
   searchOptions: SearchOptions;
@@ -65,9 +64,9 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         />
         <label>Class</label>
         <select {...register("class")}>
-          {classes.map((c) => (
+          {classes.sort().map((c) => (
             <option key={c} value={c}>
-              {c.toUpperCase()}
+              {c}
             </option>
           ))}
         </select>
@@ -99,45 +98,45 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         <select {...register("rarity")}>
           {rarities.map((rarity) => (
             <option key={rarity} value={rarity}>
-              {rarity.toUpperCase()}
+              {rarity}
             </option>
           ))}
         </select>
         <label>Card Type</label>
         <select {...register("type")}>
-          {cardTypes.map((type) => (
+          {cardTypes.sort().map((type) => (
             <option key={type} value={type}>
-              {type.toUpperCase()}
+              {type}
             </option>
           ))}
         </select>
         <label>Minion Type</label>
         <select {...register("minionType")}>
-          {minionTypes.map((type) => (
+          {minionTypes.sort().map((type) => (
             <option key={type} value={type}>
-              {type.toUpperCase()}
+              {type}
             </option>
           ))}
         </select>
         <label>Keyword</label>
         <select {...register("keyword")}>
-          {keywords.map((keyword, index) => (
+          {keywords.sort().map((keyword, index) => (
             <option key={`keyword-${keyword}-${index}`} value={keyword}>
-              {keyword.toUpperCase()}
+              {keyword}
             </option>
           ))}
         </select>
         <label>Sets</label>
         <select {...register("set")}>
-          {sets.map((set) => (
+          {sets.sort().map((set) => (
             <option key={`set-${set}`} value={set}>
-              {set.toUpperCase()}
+              {set}
             </option>
           ))}
         </select>
       </form>
-      <SearchButton onSubmit={onSubmit} />
-      <ClearFiltersButton resetForm={resetForm} />
+      <BasicButton onClick={onSubmit} text="Search" />
+      <BasicButton onClick={resetForm} text="Clear Filters" />
     </div>
   );
 };

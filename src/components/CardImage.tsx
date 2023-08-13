@@ -9,7 +9,7 @@ type CardImageProps = {
 
 export const CardImage: React.FC<CardImageProps> = ({ card }) => {
   return (
-    <div className="bg-dark4 rounded-lg pb-2 pl-1 flex justify-center items-center relative hover:bg-grey">
+    <div className="bg-gray dark:bg-dark4 rounded-lg pb-2 pl-1 flex justify-center items-center relative">
       <div className="relative">
         <Link href={`/card/${card.id}`} className="relative">
           <Image

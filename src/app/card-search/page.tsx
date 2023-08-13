@@ -4,7 +4,6 @@ import { SearchContainer } from "@/components/SearchContainer";
 import { getFilteredCards } from "@/utils/fetchFunctions";
 import { paramsToQueryString } from "@/utils/helpers";
 import { CardData, SearchParams } from "@/utils/types";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 
 type CardSearchProps = {
@@ -29,9 +28,6 @@ const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Card Library
-      <Link href="/">Home</Link>
-      <Link href="/all-cards?limit=100  ">All Cards</Link>
       <SearchContainer />
       <div className="relative grid grid-cols-6 gap-x-6 gap-y-6 bg-dark2 p-6 pt-7 rounded-lg">
         {cards.length === 0 ? (
@@ -45,16 +41,16 @@ const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
       {pageNumber > 1 && (
         <PaginationButton
           navTo={`/card-search?${queryString}page=${pageNumber - 1}`}
-          text="Next"
+          text="Previous"
         />
       )}
       {pageNumber < pageCount && (
         <PaginationButton
           navTo={`/card-search?${queryString}page=${pageNumber + 1}`}
-          text="Previous"
+          text="Next"
         />
       )}
-      {pageCount === 1 && <p>Page 1 of 1 </p>}
+      {pageCount === 1 && <p>End of Results</p>}
     </main>
   );
 };

@@ -23,7 +23,6 @@ export const SearchContainer = async () => {
 
   return (
     <div>
-      SearchContainer
       <SearchForm searchOptions={searchOptions} />
     </div>
   );

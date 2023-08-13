@@ -4,18 +4,18 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const Navigation = () => {
   return (
-    <header className="fixed flex flex-wrap z-50 w-full bg-white dark:bg-dark2 border-b-2 border-dark1 text-sm font-medium py-4">
+    <header className="fixed z-50 flex w-full flex-wrap bg-white py-2 text-sm font-medium drop-shadow-md dark:bg-dark2">
       <nav
-        className="max-w-[85rem] w-full mx-auto px-4 md:flex md:items-center md:justify-between"
+        className="mx-auto flex w-full max-w-[85rem] flex-col items-center gap-2 px-4 sm:flex-row sm:justify-between sm:gap-0"
         aria-label="Global"
       >
-        <div className="flex items-center">
+        <div className="mr-5 flex items-center">
           <Image src="/logo.png" alt="logo" width={75} height={75} />
           <Link href="/" className="text-lg font-bold hover:text-blue">
             Hearthstone Card App
           </Link>
         </div>
-        <div className="flex items-center gap-5 mt-5 md:justify-end md:mt-0 md:pl-5">
+        <div className="flex items-center justify-center gap-5 md:justify-end">
           <Link href="/all-cards" className="font-medium hover:text-blue">
             All Cards
           </Link>
