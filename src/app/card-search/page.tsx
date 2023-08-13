@@ -11,10 +11,9 @@ type CardSearchProps = {
 };
 
 const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
-  console.log(searchParams);
   const { page, ...otherParams } = searchParams;
   if (!page) {
-    redirect("/all-cards?page=1");
+    redirect("/card-search?page=1");
   }
   const pageNumber = Number(page);
 
