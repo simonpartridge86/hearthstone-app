@@ -19,7 +19,7 @@ export const CardBackImage: React.FC<CardBackImageProps> = ({ cardBack }) => {
   };
 
   return (
-    <div onClick={handleClick}>
+    <div onClick={handleClick} className="cursor-pointer">
       <Image
         key={cardBack.id}
         src={cardBack.image}
