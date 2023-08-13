@@ -43,7 +43,7 @@ export const TriggerLoad: React.FC<TriggerLoadProps> = ({ limit }) => {
   return (
     <div
       ref={triggerRef}
-      className="flex justify-center items-center w-full gap-x-4"
+      className="flex w-full items-center justify-center gap-x-4"
     >
       <span className="loading loading-spinner text-green"></span>
     </div>

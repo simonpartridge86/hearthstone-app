@@ -22,7 +22,7 @@ export const SearchContainer = async () => {
   };
 
   return (
-    <div>
+    <div className="flex-grow-1 flex flex-col items-center rounded-lg border-2 border-dark2 bg-gray p-4 dark:border-dark4 dark:bg-dark4 ">
       <SearchForm searchOptions={searchOptions} />
     </div>
   );

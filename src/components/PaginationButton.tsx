@@ -17,5 +17,12 @@ export const PaginationButton: React.FC<SearchButtonProps> = ({
     router.replace(navTo);
   };
 
-  return <button onClick={handleClick}>{text}</button>;
+  return (
+    <button
+      className="w-sm btn btn-outline btn-xs border-green bg-transparent text-green hover:border-green hover:bg-green hover:text-white dark:text-white dark:hover:bg-green"
+      onClick={handleClick}
+    >
+      {text}
+    </button>
+  );
 };

@@ -1,14 +1,25 @@
+"use client";
+
 import { CardBack } from "@/utils/types";
+import useStore from "@/utils/zustandStore";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type CardBackImageProps = {
   cardBack: CardBack;
 };
 
 export const CardBackImage: React.FC<CardBackImageProps> = ({ cardBack }) => {
+  const router = useRouter();
+  const { setCardBack } = useStore();
+
+  const handleClick = () => {
+    setCardBack(cardBack.image);
+    router.push(`/all-cards?limit=100`);
+  };
+
   return (
-    <Link href="/all-cards?limit=100">
+    <div onClick={handleClick}>
       <Image
         key={cardBack.id}
         src={cardBack.image}
@@ -16,6 +27,6 @@ export const CardBackImage: React.FC<CardBackImageProps> = ({ cardBack }) => {
         height={250}
         alt="hearthstone card back"
       />
-    </Link>
+    </div>
   );
 };

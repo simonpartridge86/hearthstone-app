@@ -27,30 +27,34 @@ const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
     await getFilteredCards(queryString, pageNumber);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-[90vh] flex-col items-center justify-center gap-10 bg-white p-12 pt-28 dark:bg-dark1 xs:pt-24 sm:flex-row sm:items-start sm:pt-20">
       <SearchContainer />
-      <div className="relative grid grid-cols-6 gap-x-6 gap-y-6 bg-dark2 p-6 pt-7 rounded-lg">
-        {cards.length === 0 ? (
-          <h1>No cards found</h1>
-        ) : (
-          cards?.map((card) => {
-            return <CardImage card={card} key={card.id} />;
-          })
-        )}
+      <div className="flex flex-col items-center justify-center">
+        <div className="flex-grow-1 relative grid grid-cols-2 gap-x-6 gap-y-6 rounded-lg border-2 border-dark2 bg-white p-6 pt-7 dark:bg-dark2 sm:grid-cols-3 md:grid-cols-4">
+          {cards.length === 0 ? (
+            <h1>No cards found</h1>
+          ) : (
+            cards?.map((card) => {
+              return <CardImage card={card} key={card.id} />;
+            })
+          )}
+        </div>
+        <div className="flex items-center justify-center gap-2 py-2 ">
+          {pageNumber > 1 && (
+            <PaginationButton
+              navTo={`/card-search?${queryString}page=${pageNumber - 1}`}
+              text="Previous Page"
+            />
+          )}
+          {pageNumber < pageCount && (
+            <PaginationButton
+              navTo={`/card-search?${queryString}page=${pageNumber + 1}`}
+              text="Next Page"
+            />
+          )}
+          {pageCount === 1 && <p>End of Results</p>}
+        </div>
       </div>
-      {pageNumber > 1 && (
-        <PaginationButton
-          navTo={`/card-search?${queryString}page=${pageNumber - 1}`}
-          text="Previous"
-        />
-      )}
-      {pageNumber < pageCount && (
-        <PaginationButton
-          navTo={`/card-search?${queryString}page=${pageNumber + 1}`}
-          text="Next"
-        />
-      )}
-      {pageCount === 1 && <p>End of Results</p>}
     </main>
   );
 };

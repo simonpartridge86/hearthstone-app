@@ -9,7 +9,7 @@ type CardImageProps = {
 
 export const CardImage: React.FC<CardImageProps> = ({ card }) => {
   return (
-    <div className="bg-gray dark:bg-dark4 rounded-lg pb-2 pl-1 flex justify-center items-center relative">
+    <div className="relative flex items-center justify-center rounded-lg bg-gray pb-2 pl-1 dark:bg-dark4">
       <div className="relative">
         <Link href={`/card/${card.id}`} className="relative">
           <Image
@@ -21,7 +21,7 @@ export const CardImage: React.FC<CardImageProps> = ({ card }) => {
           />
         </Link>
       </div>
-      <FavouriteButton id={card.id} image={card.image} />
+      <FavouriteButton card={card} />
     </div>
   );
 };

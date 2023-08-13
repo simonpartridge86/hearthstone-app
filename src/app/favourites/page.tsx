@@ -1,10 +1,8 @@
 "use client";
 
-import { FavouriteButton } from "@/components/FavouriteButton";
+import { CardImage } from "@/components/CardImage";
 import { SearchParams } from "@/utils/types";
 import useStore from "@/utils/zustandStore";
-import Image from "next/image";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 
 type FavouritesPageProps = {
@@ -18,30 +16,17 @@ const FavouritesPage: React.FC<FavouritesPageProps> = ({ searchParams }) => {
   const { favourites } = useStore();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Link href="/">Home</Link>
-      <Link href="/all-cards?limit=100">All Cards</Link>
-      <div className="relative grid grid-cols-6 gap-x-6 gap-y-6 bg-dark2 p-6 pt-7 rounded-lg">
-        {!favourites.length ? (
-          <h2>No favourites yet</h2>
-        ) : (
-          favourites.map((favourite) => {
-            return (
-              <div key={favourite.id}>
-                <Link href={`/card/${favourite.id}`}>
-                  <Image
-                    src={favourite.image}
-                    width={150}
-                    height={250}
-                    alt="hearthstone card"
-                  />
-                </Link>
-                <FavouriteButton id={favourite.id} image={favourite.image} />
-              </div>
-            );
-          })
-        )}
-      </div>
+    <main className="flex min-h-[90vh] flex-col items-center gap-y-5 bg-white p-12 pt-28 dark:bg-dark1 xs:pt-24 sm:pt-20">
+      <h2>Favourites</h2>
+      {!favourites.length ? (
+        <h2>No favourites selected yet</h2>
+      ) : (
+        <div className="relative grid grid-cols-2 gap-x-6 gap-y-6 rounded-lg border-2 border-dark2 bg-white p-6 pt-7 dark:bg-dark2 xs:grid-cols-4 md:grid-cols-6">
+          {favourites.map((favourite) => {
+            return <CardImage card={favourite} key={favourite.id} />;
+          })}
+        </div>
+      )}
     </main>
   );
 };

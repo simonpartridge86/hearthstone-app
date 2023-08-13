@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${roboto.variable}`}>
-      <body className="bg-white text-dark1 dark:bg-dark1 dark:text-white">
+      <body className="min-h-screen bg-white text-dark1 dark:bg-dark1 dark:text-white">
         <Providers>
           <Navigation />
           {children}
