@@ -36,7 +36,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
     const queryString =
       Object.keys(data).length !== 0 ? paramsToQueryString(data) : "";
 
-    router.replace(`/card-search?${queryString}&page=1`);
+    router.replace(`/card-search?${queryString}page=1`);
   });
 
   const resetForm = () => {

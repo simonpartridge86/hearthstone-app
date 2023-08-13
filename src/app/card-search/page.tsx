@@ -11,17 +11,19 @@ type CardSearchProps = {
 };
 
 const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
-  if (Object.keys(searchParams).length === 0) {
-    redirect("/card-search?page=1");
-  }
-
+  console.log(searchParams);
   const { page, ...otherParams } = searchParams;
+  if (!page) {
+    redirect("/all-cards?page=1");
+  }
   const pageNumber = Number(page);
 
   const queryString =
     Object.keys(otherParams).length !== 0
       ? paramsToQueryString(otherParams)
       : "";
+
+  console.log(queryString);
 
   const { cards, pageCount }: { cards: CardData[]; pageCount: number } =
     await getFilteredCards(queryString, pageNumber);
