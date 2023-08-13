@@ -28,10 +28,10 @@ const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
     await getFilteredCards(queryString, pageNumber);
 
   return (
-    <main className="flex min-h-[90vh] flex-col items-center justify-center gap-10 bg-white p-12 pt-28 dark:bg-dark1 xs:pt-24 sm:flex-row sm:items-start sm:pt-20">
+    <main className="flex min-h-[90vh] flex-col items-center justify-center gap-10 bg-white pb-24 pt-36 dark:bg-dark1 xl:flex-row xl:items-start">
       <SearchContainer />
       <div className="flex flex-col items-center justify-center">
-        <div className="flex-grow-1 relative grid grid-cols-2 gap-x-6 gap-y-6 rounded-lg border-2 border-dark2 bg-white p-6 pt-7 dark:bg-dark2 sm:grid-cols-3 md:grid-cols-4">
+        <div className="flex-grow-1 relative grid grid-cols-2 gap-10 rounded-xl border-2 border-dark2 bg-white p-10 dark:bg-dark2 lg:grid-cols-3 xl:grid-cols-4">
           {cards.length === 0 ? (
             <h1>No cards found</h1>
           ) : (
@@ -40,7 +40,7 @@ const CardSearchPage: React.FC<CardSearchProps> = async ({ searchParams }) => {
             })
           )}
         </div>
-        <div className="flex items-center justify-center gap-2 py-2 ">
+        <div className="flex items-center justify-center gap-4 py-4 ">
           {pageNumber > 1 && (
             <PaginationButton
               navTo={`/card-search?${queryString}page=${pageNumber - 1}`}

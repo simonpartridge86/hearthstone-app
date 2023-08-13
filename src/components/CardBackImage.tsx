@@ -23,8 +23,8 @@ export const CardBackImage: React.FC<CardBackImageProps> = ({ cardBack }) => {
       <Image
         key={cardBack.id}
         src={cardBack.image}
-        width={150}
-        height={250}
+        width={200}
+        height={300}
         alt="hearthstone card back"
       />
     </div>

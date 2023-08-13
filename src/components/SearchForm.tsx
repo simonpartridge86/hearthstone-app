@@ -46,17 +46,17 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
 
   return (
     <>
-      <form className="flex flex-col gap-1 text-xs">
+      <form className="flex w-full flex-col gap-2 text-xl">
         <label>Name</label>
         <input
-          className="input input-bordered input-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="input input-bordered input-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           type="text"
           placeholder="Search text"
           {...register("textFilter")}
         />
         <label>Class</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("class")}
         >
           {classes.sort().map((c) => (
@@ -67,7 +67,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Mana Cost</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("manaCost")}
         >
           {numberOptions.map((num) => (
@@ -78,7 +78,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Attack</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("attack")}
         >
           {numberOptions.map((num) => (
@@ -89,7 +89,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Health</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("health")}
         >
           {numberOptions.map((num) => (
@@ -100,7 +100,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Rarity</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("rarity")}
         >
           {rarities.map((rarity) => (
@@ -111,7 +111,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Card Type</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("type")}
         >
           {cardTypes.sort().map((type) => (
@@ -122,7 +122,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Minion Type</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("minionType")}
         >
           {minionTypes.sort().map((type) => (
@@ -133,7 +133,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Keyword</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("keyword")}
         >
           {keywords.sort().map((keyword, index) => (
@@ -144,7 +144,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
         </select>
         <label>Sets</label>
         <select
-          className="select select-bordered select-xs w-full max-w-xs bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
+          className="select select-bordered select-lg w-full max-w-lg bg-white font-normal text-dark2 dark:bg-dark2 dark:text-white"
           {...register("set")}
         >
           {sets.sort().map((set) => (
@@ -154,9 +154,9 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
           ))}
         </select>
       </form>
-      <div className="flex items-center justify-center gap-2 py-2">
-        <BasicButton onClick={onSubmit} text="Search" />
+      <div className="flex w-full items-center justify-center gap-6 px-4 py-6">
         <BasicButton onClick={resetForm} text="Clear" />
+        <BasicButton onClick={onSubmit} text="Search" />
       </div>
     </>
   );

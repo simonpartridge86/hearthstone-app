@@ -24,7 +24,7 @@ export const FavouriteButton: React.FC<FavouriteButtonProps> = ({ card }) => {
   return (
     <button
       onClick={handleClick}
-      className={`btn btn-circle btn-outline btn-xs absolute right-[-10px] top-[-10px] text-white hover:bg-white ${
+      className={`btn btn-circle btn-outline btn-md absolute right-[-20px] top-[-20px] border-2 text-white hover:bg-white ${
         isFavourite
           ? "bg-green hover:border-green hover:text-green"
           : "bg-gray hover:border-none  hover:text-gray dark:bg-dark2 dark:hover:bg-white dark:hover:text-dark2"

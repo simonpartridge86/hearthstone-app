@@ -2,8 +2,8 @@ import { FallbackCardImage } from "@/components/FallbackCardImage";
 
 const Loading = () => {
   return (
-    <main className="flex min-h-[90vh] flex-col items-center justify-center gap-10 bg-white p-12 pt-28 dark:bg-dark1 xs:pt-24 sm:flex-row sm:items-start sm:pt-20">
-      <div className="flex-grow-1 flex h-[90vh] w-[26vw] flex-col items-center rounded-lg border-2 border-dark2 bg-gray p-4 dark:border-dark4 dark:bg-dark4 " />
+    <main className="flex min-h-[90vh] flex-col items-center justify-center gap-10 bg-white pb-24 pt-36 dark:bg-dark1 xl:flex-row xl:items-start">
+      <div className="flex h-[90vh] w-4/5 flex-col items-center rounded-xl border-2 border-dark2 bg-gray p-8 pb-2 dark:border-dark4 dark:bg-dark4 md:w-3/4 lg:w-1/2 xl:w-[30%]" />
       <div className="flex flex-col items-center justify-center">
         <div className="flex-grow-1 relative grid grid-cols-2 gap-x-6 gap-y-6 rounded-lg border-2 border-dark2 bg-white p-6 pt-7 dark:bg-dark2 sm:grid-cols-3 md:grid-cols-4">
           <FallbackCardImage key={1} id={1} />

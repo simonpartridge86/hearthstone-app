@@ -19,7 +19,7 @@ export const PaginationButton: React.FC<SearchButtonProps> = ({
 
   return (
     <button
-      className="w-sm btn btn-outline btn-xs border-green bg-transparent text-green hover:border-green hover:bg-green hover:text-white dark:text-white dark:hover:bg-green"
+      className="w-sm btn btn-outline btn-lg border-2 border-green bg-transparent text-green hover:border-green hover:bg-green hover:text-white dark:text-white dark:hover:bg-green"
       onClick={handleClick}
     >
       {text}

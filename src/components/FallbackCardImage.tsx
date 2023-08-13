@@ -11,16 +11,16 @@ export const FallbackCardImage: React.FC<FallbackCardImageProps> = ({ id }) => {
   const { cardBack } = useStore();
 
   return (
-    <div className="relative flex items-center justify-center rounded-lg">
+    <div className="relative flex items-center justify-center rounded-xl">
       <Image
         key={`default-${id}`}
         src={cardBack || "/default.png"}
-        width={150}
-        height={250}
+        width={200}
+        height={300}
         alt="classic card back"
       />
       <div className="absolute right-[-10px] top-[-10px] rounded-full bg-green">
-        <span className="loading loading-spinner loading-xs mx-[6px] mt-[6px] text-white"></span>
+        <span className="loading loading-spinner loading-md mx-[6px] mt-[6px] text-white"></span>
       </div>
     </div>
   );
