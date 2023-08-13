@@ -145,3 +145,14 @@ export interface FormInput {
   set: string;
   [key: string]: string;
 }
+
+export type CardBackState = {
+  cardBack: string;
+  setCardBack: (cardBack: string) => void;
+};
+
+export type FavouritesState = {
+  favourites: CardData[];
+  addFavourite: (favourite: CardData) => void;
+  removeFavourite: (id: number) => void;
+};

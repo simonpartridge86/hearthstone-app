@@ -11,18 +11,6 @@ type SearchFormProps = {
   searchOptions: SearchOptions;
 };
 
-//set=rise-of-shadows
-//class=mage
-//manaCost=10 max of 10
-//attack=4 max of 10
-//health=10 max of 10
-//rarity=legendary
-//type=minion
-//minionType=dragon
-//keyword=battlecry
-//textFilter=kalecgos
-//page=1&pageSize=20
-
 export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
   const router = useRouter();
   const { sets, classes, rarities, cardTypes, minionTypes, keywords } =
@@ -30,15 +18,15 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
 
   const initialValues = {
     textFilter: "",
-    class: "-- Select from list --",
-    manaCost: "-- Select from list --",
-    attack: "-- Select from list --",
-    health: "-- Select from list --",
-    rarity: "-- Select from list --",
-    type: "-- Select from list --",
-    minionType: "-- Select from list --",
-    keyword: "-- Select from list --",
-    set: "-- Select from list --",
+    class: "",
+    manaCost: "",
+    attack: "",
+    health: "",
+    rarity: "",
+    type: "",
+    minionType: "",
+    keyword: "",
+    set: "",
   };
 
   const { register, handleSubmit, reset } = useForm<FormInput>({
@@ -47,8 +35,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({ searchOptions }) => {
   const onSubmit = handleSubmit((data) => {
     const queryString =
       Object.keys(data).length !== 0 ? paramsToQueryString(data) : "";
-
-    console.log(queryString);
 
     router.replace(`/card-search?${queryString}&page=1`);
   });

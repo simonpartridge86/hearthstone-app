@@ -1,18 +1,7 @@
 "use client";
 
 import { StateCreator, create } from "zustand";
-import { CardData } from "./types";
-
-type FavouritesState = {
-  favourites: CardData[];
-  addFavourite: (favourite: CardData) => void;
-  removeFavourite: (id: number) => void;
-};
-
-type CardBackState = {
-  cardBack: string;
-  setCardBack: (cardBack: string) => void;
-};
+import { CardBackState, FavouritesState } from "./types";
 
 const useFavouritesSlice: StateCreator<FavouritesState> = (set) => ({
   favourites: [],

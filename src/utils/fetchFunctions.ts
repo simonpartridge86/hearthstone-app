@@ -1,14 +1,15 @@
 export const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 export const BASE_URL = process.env.API_URL;
 
-//fetches a random selection of 10 card back designs (233 total "cardCount")
+//fetches a random selection of card back designs (233 total "cardCount")
 
 export const getCardBacks = async () => {
+  const pageSize = 6;
   const randomPageNumber = Math.ceil(Math.random() * 38);
 
   try {
     const res = await fetch(
-      `${BASE_URL}cardbacks?locale=en_US&page=${randomPageNumber}&pageSize=6&access_token=${ACCESS_TOKEN}`,
+      `${BASE_URL}cardbacks?locale=en_US&page=${randomPageNumber}&pageSize=${pageSize}&access_token=${ACCESS_TOKEN}`,
     );
 
     if (!res.ok) {
@@ -94,7 +95,7 @@ export const getCard = async (id: string) => {
   }
 };
 
-//fetches card metadata to provide options in search filters
+//fetches card metadata to use as options in search filters
 
 export const getCardMetaData = async () => {
   try {

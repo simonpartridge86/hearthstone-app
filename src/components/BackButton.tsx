@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import BasicButton from "./BasicButton";
 
 export const BackButton = () => {
   const router = useRouter();
 
-  return <button onClick={() => router.back()}>Go Back</button>;
+  return <BasicButton onClick={() => router.back()} text="Go Back" />;
 };
